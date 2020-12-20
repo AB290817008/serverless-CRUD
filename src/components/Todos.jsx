@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 const baseURL = ".netlify/functions/faunadb-crud/";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
     createStyles({
         root: {
             width: '100%',
@@ -60,9 +60,7 @@ const schema = Yup.object({
         .min(4, 'Must be greater than or equals to 4 characters')
 });
 
-export interface TodosProps {
 
-}
 
 const getAllTodos = async () => {
     return await fetch(baseURL)
@@ -128,7 +126,7 @@ const updateTodo = async (id, title) => {
 
 
 
-const Todos: React.SFC<TodosProps> = () => {
+const Todos = () => {
 
     const classes = useStyles();
     const [todo, setTodo] = React.useState('')
@@ -178,7 +176,7 @@ const Todos: React.SFC<TodosProps> = () => {
                     }}
 
                 >
-                    {(formik: any) => (
+                    {(formik) => (
                         <Form onSubmit={formik.handleSubmit}>
                             <Grid container justify="center">
                                 <Grid item xs={12} sm={4}>
@@ -193,7 +191,7 @@ const Todos: React.SFC<TodosProps> = () => {
                                             className={classes.textField}
                                         />
                                         <br />
-                                        <ErrorMessage name='todo' render={(msg: string) => (
+                                        <ErrorMessage name='todo' render={(msg) => (
                                             <span style={{ color: "red", fontSize: '18sp' }}>{msg}</span>
                                         )} />
                                         <br />
@@ -244,7 +242,7 @@ const Todos: React.SFC<TodosProps> = () => {
                                                     }}
 
                                                 >
-                                                    {(formik: any) => (
+                                                    {(formik) => (
                                                         <Form onSubmit={formik.handleSubmit}>
                                                             <Grid container justify="center">
                                                                 <Grid item xs={12}>
@@ -259,7 +257,7 @@ const Todos: React.SFC<TodosProps> = () => {
                                                                             className={classes.textField}
                                                                         />
                                                                         <br />
-                                                                        <ErrorMessage name='todo' render={(msg: string) => (
+                                                                        <ErrorMessage name='todo' render={(msg) => (
                                                                             <span style={{ color: "red", fontSize: '18sp' }}>{msg}</span>
                                                                         )} />
                                                                         <br />
