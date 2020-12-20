@@ -8,7 +8,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { TextField, Button } from '@material-ui/core';
 import Swal from 'sweetalert2';
 
-const baseURL = "/.netlify/functions/faunadb-crud/";
+const baseURL = ".netlify/functions/faunadb-crud/";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
