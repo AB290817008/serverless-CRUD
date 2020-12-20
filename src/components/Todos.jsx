@@ -242,7 +242,7 @@ const Todos = () => {
                                                     }}
 
                                                 >
-                                                    {(formik) => (
+                                                    {(formik: any) => (
                                                         <Form onSubmit={formik.handleSubmit}>
                                                             <Grid container justify="center">
                                                                 <Grid item xs={12}>
@@ -257,7 +257,7 @@ const Todos = () => {
                                                                             className={classes.textField}
                                                                         />
                                                                         <br />
-                                                                        <ErrorMessage name='todo' render={(msg) => (
+                                                                        <ErrorMessage name='todo' render={(msg: string) => (
                                                                             <span style={{ color: "red", fontSize: '18sp' }}>{msg}</span>
                                                                         )} />
                                                                         <br />
