@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 const baseURL = ".netlify/functions/faunadb-crud/";
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: '100%',
@@ -60,7 +60,9 @@ const schema = Yup.object({
         .min(4, 'Must be greater than or equals to 4 characters')
 });
 
+export interface TodosProps {
 
+}
 
 const getAllTodos = async () => {
     return await fetch(baseURL)
@@ -126,7 +128,7 @@ const updateTodo = async (id, title) => {
 
 
 
-const Todos = () => {
+const Todos: React.SFC<TodosProps> = () => {
 
     const classes = useStyles();
     const [todo, setTodo] = React.useState('')
@@ -176,7 +178,7 @@ const Todos = () => {
                     }}
 
                 >
-                    {(formik) => (
+                    {(formik: any) => (
                         <Form onSubmit={formik.handleSubmit}>
                             <Grid container justify="center">
                                 <Grid item xs={12} sm={4}>
@@ -191,7 +193,7 @@ const Todos = () => {
                                             className={classes.textField}
                                         />
                                         <br />
-                                        <ErrorMessage name='todo' render={(msg) => (
+                                        <ErrorMessage name='todo' render={(msg: string) => (
                                             <span style={{ color: "red", fontSize: '18sp' }}>{msg}</span>
                                         )} />
                                         <br />
