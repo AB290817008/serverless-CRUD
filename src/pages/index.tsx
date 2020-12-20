@@ -4,7 +4,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 
 
-const baseURL = ".netlify/functions/faunadb-crud/";
+const baseURL = "https://5fdfaa662e8608000759aa76--mystifying-benz-e9e782.netlify.app/.netlify/functions/faunadb-crud/";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
